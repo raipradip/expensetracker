@@ -4,16 +4,16 @@
 
     <div class="container">
       <h4>Your Balance</h4>
-      <h1 id="balance">${{profile.balance}}</h1>
+      <h1 id="balance">Rs.{{profile.balance}}</h1>
 
       <div class="inc-exp-container">
         <div>
           <h4>Income</h4>
-          <p id="money-plus" class="money plus">+${{profile.income}}</p>
+          <p id="money-plus" class="money plus">+Rs.{{profile.income}}</p>
         </div>
         <div>
           <h4>Expense</h4>
-          <p id="money-minus" class="money minus">-${{profile.expense}}</p>
+          <p id="money-minus" class="money minus">-Rs.{{profile.expense}}</p>
         </div>
       </div>
 
@@ -22,12 +22,12 @@
       {% for expense in expenses %}
         {% if expense.expense_type == 'Positive' %}
           <li class="plus">
-          <span style="text-transform:capitalize">{{expense.name}}</span> <span>+${{expense.amount}}</span><button class="delete-btn">x</button>
+          <span style="text-transform:capitalize">{{expense.name}}</span> <span>+Rs.{{expense.amount}}</span><button class="delete-btn">x</button>
         </li>
         {% endif %}
         {% if expense.expense_type == 'Negative' %}
         <li class="minus">
-          <span style="text-transform:capitalize">{{expense.name}}</span> <span>-${{expense.amount}}</span><button class="delete-btn">x</button>
+          <span style="text-transform:capitalize">{{expense.name}}</span> <span>-Rs.{{expense.amount}}</span><button class="delete-btn">x</button>
         </li>
         {% endif %}
       {% endfor %}
